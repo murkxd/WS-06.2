@@ -6,7 +6,7 @@
 header {
     background-color: orange;
     width: 100%;
-    height: 5vw;
+    grid-area: topbar;
 }
 
 .logo {
@@ -37,17 +37,29 @@ aside {
     background-color: darkkhaki;
     float: left;
     clear: left;
-    width: 20%;
+    width: 100%;
     height: 44vw;
+    grid-area: sidebar;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "topbar topbar topbar"
+        "sidebar content content"
+        "bot bot bot";
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 5vw auto 5vw;
 }
 
 main {
     background-color: lightseagreen;
     height: 44vw;
+    grid-area: content;
 }
 
 footer {
     background-color: green;
     width: 100%;
-    height: 5vw;
+    grid-area: bot;
 }
